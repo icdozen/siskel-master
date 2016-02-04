@@ -6,7 +6,7 @@ class Siskel
     year = options[:year]
     plot_type = options[:plot]
     @movie = HTTParty.get("http://www.omdbapi.com/?t=#{title}&y=#{options[:year]}&plot=#{plot_type}&tomatoes=true")
-    @tomato = @movie["tomatoMeter"].to_f
+    @tomato = @movie["tomatoMeter"].to_i
     @title = @movie['Title']
     @rating = @movie["Rated"]
     @year = @movie["Year"]
